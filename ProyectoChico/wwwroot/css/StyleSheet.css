@@ -1,0 +1,41 @@
+﻿ /*#tituloLogin {
+    cursor: pointer;
+}
+
+.popup {
+    padding: 5px;
+    border: 2px black inset;
+    display: inline-block;
+}
+
+    .popup input {
+        width: 200px;
+        display: inline-block;
+    }
+
+    .popup label {
+        width: 150px;
+        display: inline-block;
+    }
+
+    .popup input[type=checkbox], .popup input[type=submit] {
+        width: auto;
+    }
+
+body {
+    background-color: lightblue;
+}
+
+menu li{
+    display:inline;
+}
+
+menu li::after{
+    content:' |';
+}
+
+menu li:last-of-type::after{
+    content:"";
+}*/
+
+

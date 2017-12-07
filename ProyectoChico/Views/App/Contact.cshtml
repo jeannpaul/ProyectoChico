@@ -1,0 +1,28 @@
+﻿@model ContactView
+<h2>@ViewBag.Tittle</h2>
+@section scripts{ 
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+    <form method="post">
+        <div  asp-validation-summary="ModelOnly" ></div>
+        <label asp-for="nombre" >Your name</label>
+        <br />
+        <input  asp-for="nombre"/>
+        <span asp-validation-for="nombre"></span>
+        <br />
+        <label asp-for="email" >Email</label>
+        <br />
+        <input  asp-for="email" type="email"/>
+        <span asp-validation-for="email"></span>
+        <br />
+        <label asp-for="contenido" >Contenido</label>
+        <br />
+        <textarea asp-for="contenido" rows="4"></textarea>
+        <span asp-validation-for="contenido"></span>
+
+        <br />
+        <br />
+        <input type="submit"  value="Enviar"/>
+    </form>
