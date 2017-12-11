@@ -1,19 +1,18 @@
 ﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
 
-@{
-    ViewBag.Tittle = "Home page";
-}
+
 <!DOCTYPE html>
 <html>
 <head>
     <script src="~/js/index.js"></script>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/StyleSheet.css" />
     <meta charset="utf-8" />    
     
     <title>@ViewBag.Tittle</title>
 
-
+   
    
     @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
@@ -23,7 +22,7 @@
 
 
             <div class="navbar-header">
-                <div class="navbar-brand">   Jota</div>
+                <div class="navbar-brand"> <i class="fa fa-apple ">  Jota</i></div>
                 <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">&#9776;</button>
             </div>
             <div id="menu" class="collapse navbar-collapse" >
@@ -31,6 +30,7 @@
                     <li><a asp-controller="App" asp-action="Index">Home</a></li>
                     <li><a asp-controller="App" asp-action="Contact">Contacto</a></li>
                     <li><a asp-controller="App" asp-action="About">Acerca</a></li>
+                    <li><a asp-controller="App" asp-action="Shop">Tienda</a></li>
                 </ul>
             </div>
            
@@ -38,6 +38,7 @@
 
         </header>
     </div>
+    <h2 class="text-center">@ViewBag.Tittle</h2>
     <section class="container">
         @RenderBody()
     </section>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProyectoChico.Data;
 using ProyectoChico.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -7,8 +8,16 @@ using System.Threading.Tasks;
 
 namespace ProyectoChico.Controllers
 {
-    public class AppController:Controller
+    public class AppController : Controller
     {
+        private readonly JotaContext context;
+        private readonly IJotaRepository repository;
+
+        public AppController(IJotaRepository repository)
+        {
+         
+            this.repository = repository;
+        }
        
         public IActionResult Index()
         {
@@ -35,6 +44,7 @@ namespace ProyectoChico.Controllers
             {
 
             }
+            ViewBag.UserMessage = "Mail enviado";
             return View();
         }
 
@@ -44,6 +54,14 @@ namespace ProyectoChico.Controllers
           
 
             return View();
+        }
+        
+        [HttpGet("Tienda")]
+        public IActionResult Shop()
+        {
+            var results = repository.obtenerTodo();
+            return View(results);
+
         }
     }
 }

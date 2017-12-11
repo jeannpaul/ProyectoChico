@@ -1,0 +1,8 @@
+﻿{
+  "Colors": {
+    "Favorite": "black"
+  },
+  "ConnectionStrings": {
+    "JotaConnectionString": "server=(localdb)\\MSSQLLocalDB;Database=JotaDb;Integrated Security=true;MultipleActiveResultSets=true;"
+  }
+}

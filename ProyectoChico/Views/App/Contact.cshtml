@@ -1,28 +1,39 @@
-﻿@model ContactView
-<h2>@ViewBag.Tittle</h2>
+﻿@{
+    ViewBag.Tittle = "Contacto";
+}
+@model ContactView
+
 @section scripts{ 
 <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
 <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }
+<div class="col-md-6 col-md-offset-3">
+    <div class="well">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label asp-for="nombre">Your name</label>
+                <input asp-for="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+          
+            <div class="form-group">
+                <label asp-for="email">Email</label>
+                <input asp-for="email" type="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <label asp-for="contenido">Contenido</label>
+                <textarea asp-for="contenido" rows="4" class="form-control"></textarea>
+                <span asp-validation-for="contenido" class="text-danger"></span>
+            </div>
 
-    <form method="post">
-        <div  asp-validation-summary="ModelOnly" ></div>
-        <label asp-for="nombre" >Your name</label>
-        <br />
-        <input  asp-for="nombre"/>
-        <span asp-validation-for="nombre"></span>
-        <br />
-        <label asp-for="email" >Email</label>
-        <br />
-        <input  asp-for="email" type="email"/>
-        <span asp-validation-for="email"></span>
-        <br />
-        <label asp-for="contenido" >Contenido</label>
-        <br />
-        <textarea asp-for="contenido" rows="4"></textarea>
-        <span asp-validation-for="contenido"></span>
-
-        <br />
-        <br />
-        <input type="submit"  value="Enviar"/>
-    </form>
+          
+            <div class="form-group">
+            <input type="submit" value="Enviar" class="btn btn-primary" />
+                <div class="text-success"> @ViewBag.UserMessage </div>
+            </div>
+        </form>
+    </div>
+</div>
